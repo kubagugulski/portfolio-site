@@ -74,11 +74,10 @@ export default function Hero({ startAnimation }: HeroProps) {
             animation: 'pulse-shadow 2s ease-in-out infinite',
           }}
           onClick={() => {
-            const main = document.querySelector('main');
             const kontakt = document.getElementById('kontakt');
-            if (main && kontakt) {
+            if (kontakt) {
               const offsetTop = kontakt.offsetTop;
-              main.scrollTo({ top: offsetTop, behavior: 'smooth' });
+              window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
           }}
           className="bg-[#4ade80] text-[#1a1a1a] px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow relative z-20 animate-[pulse-shadow_2s_ease-in-out_infinite]"

@@ -14,6 +14,7 @@ const sections = [
 const menuVariants = {
   closed: {
     scale: 0,
+    opacity: 0,
     transition: {
       delay: 0.3,
       type: "spring" as const,
@@ -23,6 +24,7 @@ const menuVariants = {
   },
   open: {
     scale: 1,
+    opacity: 1,
     transition: {
       type: "spring" as const,
       stiffness: 200,
@@ -102,9 +104,17 @@ export default function MobileMenu() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-[#1a1a1a] z-150 flex items-center justify-center origin-center"
-            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+            className="fixed inset-0 bg-[#1a1a1a] z-[150] flex items-center justify-center"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              transformOrigin: 'center',
+            }}
           >
+
             <motion.nav className="flex flex-col gap-8 items-center">
               {sections.map((section) => (
                 <motion.button
