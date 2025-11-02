@@ -13,7 +13,7 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      setTimeout(onComplete, 500);
+      setTimeout(onComplete, 100);
     }, 3000);
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -22,9 +22,9 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-[#1a1a1a] flex items-center justify-center"
+      animate={{ opacity: show ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-100 bg-[#1a1a1a] flex items-center justify-center"
     >
       {/* Animated initials */}
       <motion.div
@@ -78,7 +78,7 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
 
       {/* Background grid effect */}
       <div className="absolute inset-0 opacity-10">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#4ade8020_1px,transparent_1px),linear-gradient(to_bottom,#4ade8020_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="h-full w-full bg-[linear-gradient(to_right,#4ade8020_1px,transparent_1px),linear-gradient(to_bottom,#4ade8020_1px,transparent_1px)] bg-size-[40px_40px]" />
       </div>
     </motion.div>
   );

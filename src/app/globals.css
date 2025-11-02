@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom text selection color */
+::selection {
+  background-color: #4ade80;
+  color: #1a1a1a;
+}
+
+::-moz-selection {
+  background-color: #4ade80;
+  color: #1a1a1a;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pulsing shadow animation for CTA button */
+@keyframes pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.4);
+  }
+}

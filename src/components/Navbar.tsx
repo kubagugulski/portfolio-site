@@ -53,12 +53,13 @@ export default function Navbar() {
                   key={item}
                   whileHover={{ scale: 1.1, color: '#4ade80' }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(sectionId)}
                   className="text-[#a1a1a1] hover:text-[#4ade80] font-medium transition-colors"
                   style={{ fontFamily: 'Space Mono, monospace' }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  
                 >
                   {item}
                 </motion.button>

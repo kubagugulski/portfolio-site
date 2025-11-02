@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const sections = [
@@ -10,23 +10,64 @@ const sections = [
   { id: 'kontakt', label: 'Kontakt' },
 ];
 
+// Variants for stagger animation
+const menuVariants = {
+  closed: {
+    scale: 0,
+    transition: {
+      delay: 0.3,
+      type: "spring" as const,
+      stiffness: 400,
+      damping: 40
+    }
+  },
+  open: {
+    scale: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 200,
+      damping: 30,
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  closed: { opacity: 0, y: 20 },
+  open: { opacity: 1, y: 0 }
+};
+
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  const scrollToSection = (sectionId: string) => {
+    setIsOpen(false);
+    
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 400);
   };
 
   return (
     <div className="md:hidden">
-      {/* Hamburger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 z-[60]"
+        className="relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 z-200"
         aria-label="Menu"
       >
         <motion.span
@@ -34,12 +75,14 @@ export default function MobileMenu() {
             rotate: isOpen ? 45 : 0,
             y: isOpen ? 8 : 0,
           }}
+          transition={{ duration: 0.2 }}
           className="w-6 h-0.5 bg-[#4ade80] block"
         />
         <motion.span
           animate={{
             opacity: isOpen ? 0 : 1,
           }}
+          transition={{ duration: 0.2 }}
           className="w-6 h-0.5 bg-[#4ade80] block"
         />
         <motion.span
@@ -47,34 +90,37 @@ export default function MobileMenu() {
             rotate: isOpen ? -45 : 0,
             y: isOpen ? -8 : 0,
           }}
+          transition={{ duration: 0.2 }}
           className="w-6 h-0.5 bg-[#4ade80] block"
         />
       </button>
 
-      {/* Full screen menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#1a1a1a] z-50 flex items-center justify-center"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed inset-0 bg-[#1a1a1a] z-150 flex items-center justify-center origin-center"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
           >
-            <nav className="flex flex-col gap-8">
-              {sections.map((section, index) => (
+            <motion.nav className="flex flex-col gap-8 items-center">
+              {sections.map((section) => (
                 <motion.button
                   key={section.id}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1, color: '#4ade80' }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
                   onClick={() => scrollToSection(section.id)}
-                  className="text-4xl text-[#a1a1a1] hover:text-[#4ade80] transition-colors text-left"
+                  className="text-4xl text-[#a1a1a1] transition-colors"
                   style={{ fontFamily: 'Courier Prime, monospace' }}
                 >
                   {section.label}
                 </motion.button>
               ))}
-            </nav>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
