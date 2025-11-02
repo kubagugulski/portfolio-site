@@ -27,7 +27,7 @@ export default function Footer() {
             className="flex gap-6"
           >
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/kubagugulski"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, color: '#4ade80' }}
@@ -38,7 +38,7 @@ export default function Footer() {
             </motion.a>
             <span className="text-[#4a4a4a]">|</span>
             <motion.a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/jakub-gugulski-155177232/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, color: '#4ade80' }}

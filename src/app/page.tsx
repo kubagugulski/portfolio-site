@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/sections/Hero';
+import Footer from '@/components/sections/Footer';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import LoadingAnimation from '@/components/LoadingAnimation';
 import CursorTrail from '@/components/CursorTrail';
-import Footer from '@/components/Footer';
 import CircleReveal from '@/components/CircleReveal';
 
 export default function Home() {
@@ -17,10 +17,12 @@ export default function Home() {
 
   useEffect(() => {
     if (!isLoading) {
-      setTimeout(() => setCircleComplete(true), 1000);
-      setTimeout(() => setShowContent(true), 1100);
+      setTimeout(() => setShowContent(true), 1600);
+      setTimeout(() => setCircleComplete(true), 1700);
     }
   }, [isLoading]);
+
+
 
   return (
     <>

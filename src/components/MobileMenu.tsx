@@ -104,7 +104,7 @@ export default function MobileMenu() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-[#1a1a1a] z-[150] flex items-center justify-center"
+            className="fixed inset-0 bg-[#1a1a1a] z-150 flex items-center justify-center"
             style={{
               position: 'fixed',
               top: 0,
