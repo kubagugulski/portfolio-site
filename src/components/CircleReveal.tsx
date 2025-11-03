@@ -55,7 +55,7 @@ export default function CircleReveal({ isComplete }: CircleRevealProps) {
         duration: 1,
         ease: [0.83, 0, 0.17, 1], // smooth ease in/out
       }}
-      className="fixed inset-0 z-[90] bg-[#4ade80]"
+      className="fixed inset-0 z-90 bg-[#4ade80]"
     />
   );
 }

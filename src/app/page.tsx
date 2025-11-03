@@ -43,7 +43,7 @@ export default function Home() {
             <Hero startAnimation={showContent} />
             
             {/* Portfolio section - placeholder */}
-            <section id="portfolio" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
+            <section id="oferta" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
               <div className="text-center">
                 <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
                   Portfolio
@@ -55,7 +55,7 @@ export default function Home() {
             </section>
 
             {/* Współpraca section - placeholder */}
-            <section id="wspolpraca" className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
+            <section id="portfolio" className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
               <div className="text-center">
                 <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
                   Współpraca
@@ -67,7 +67,20 @@ export default function Home() {
             </section>
 
             {/* Kontakt section - placeholder */}
-            <section id="kontakt" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
+            <section id="faq" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
+              <div className="text-center">
+                <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
+                  Kontakt
+                </h2>
+                <p className="text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>
+                  Tu będzie formularz kontaktowy
+                </p>
+              </div>
+            </section>
+
+
+            {/*kontakt sekcja placeholder */}
+            <section id="kontakt" className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
               <div className="text-center">
                 <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
                   Kontakt

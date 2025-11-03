@@ -44,9 +44,8 @@ export default function Navbar() {
 
           {/* Desktop Menu - hidden on mobile */}
           <div className="hidden md:flex gap-8">
-            {['Start', 'Portfolio', 'Współpraca', 'Kontakt'].map((item, index) => {
+            {['Start', 'Oferta', 'Portfolio', 'FAQ', 'Kontakt'].map((item, index) => {
               const sectionId = item.toLowerCase() === 'start' ? 'hero' : 
-                               item.toLowerCase() === 'współpraca' ? 'wspolpraca' : 
                                item.toLowerCase();
               return (
                 <motion.button
