@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/sections/Hero';
 import Footer from '@/components/sections/Footer';
+import Kontakt from '@/components/sections/Kontakt';
+import FAQ from '@/components/sections/FAQ';
+import Portfolio from '@/components/sections/Portfolio';
+import Oferta from '@/components/sections/Oferta';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import LoadingAnimation from '@/components/LoadingAnimation';
 import CursorTrail from '@/components/CursorTrail';
@@ -41,56 +45,10 @@ export default function Home() {
         
           <main className="bg-[#1a1a1a] overflow-x-hidden">
             <Hero startAnimation={showContent} />
-            
-            {/* Portfolio section - placeholder */}
-            <section id="oferta" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
-              <div className="text-center">
-                <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
-                  Portfolio
-                </h2>
-                <p className="text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>
-                  Tu będą Twoje projekty
-                </p>
-              </div>
-            </section>
-
-            {/* Współpraca section - placeholder */}
-            <section id="portfolio" className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
-              <div className="text-center">
-                <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
-                  Współpraca
-                </h2>
-                <p className="text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>
-                  Tu będzie schemat współpracy
-                </p>
-              </div>
-            </section>
-
-            {/* Kontakt section - placeholder */}
-            <section id="faq" className="min-h-screen flex items-center justify-center bg-[#2a2a2a]">
-              <div className="text-center">
-                <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
-                  Kontakt
-                </h2>
-                <p className="text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>
-                  Tu będzie formularz kontaktowy
-                </p>
-              </div>
-            </section>
-
-
-            {/*kontakt sekcja placeholder */}
-            <section id="kontakt" className="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
-              <div className="text-center">
-                <h2 className="text-5xl font-bold mb-4 text-[#e5e5e5]" style={{ fontFamily: 'Courier Prime, monospace' }}>
-                  Kontakt
-                </h2>
-                <p className="text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>
-                  Tu będzie formularz kontaktowy
-                </p>
-              </div>
-            </section>
-            
+            <Oferta />
+            <Portfolio />
+            <FAQ />
+            <Kontakt />
             <Footer />
           </main>
         </motion.div>
