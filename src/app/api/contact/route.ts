@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, message } = body;
 
-    // Walidacja
+    // Validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Wszystkie pola są wymagane' },
@@ -17,9 +17,9 @@ export async function POST(request: Request) {
       );
     }
 
-    // Wysłanie maila przez Resend
+    // Sending email through Resend
     const data = await resend.emails.send({
-      from: 'Formularz Kontaktowy <onboarding@resend.dev>', // Zmień później na swoją domenę
+      from: 'Formularz Kontaktowy <onboarding@resend.dev>', // TODO: change to my domian
       to: ['jakub.gugulski1@gmail.com'], 
       subject: `Nowa wiadomość od ${name}`,
       html: `

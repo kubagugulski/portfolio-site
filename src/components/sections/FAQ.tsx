@@ -65,7 +65,7 @@ export default function FAQ() {
               {/* Question */}
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#252525] transition-colors cursor-pointer"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#252525] transition-colors"
               >
                 <span 
                   className="text-lg md:text-xl font-semibold text-[#e5e5e5] pr-4"
@@ -78,23 +78,20 @@ export default function FAQ() {
                 <motion.div
                   animate={{ rotate: openIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="shrink-0 w-8 h-8 rounded-full border-2 border-[#4ade80] flex items-center justify-center"
+                  className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#4ade80] flex items-center justify-center relative"
                 >
-                  <div className="relative w-4 h-4">
-                    {/* Horizontal line */}
-                    <motion.div 
-                      className="absolute top-1/2 left-0 w-full h-0.5 bg-[#4ade80] transform -translate-y-1/2"
-                    />
-                    {/* Vertical line */}
-                    <motion.div 
-                      animate={{ 
-                        opacity: openIndex === index ? 0 : 1,
-                        scaleY: openIndex === index ? 0 : 1
-                      }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-0 left-1/2 h-full w-0.5 bg-[#4ade80] transform -translate-x-1/2"
-                    />
-                  </div>
+                  {/* Horizontal line */}
+                  <motion.div 
+                    className="absolute w-4 h-0.5 bg-[#4ade80]"
+                  />
+                  {/* Vertical line */}
+                  <motion.div 
+                    animate={{ 
+                      rotate: openIndex === index ? 90 : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute w-4 h-0.5 bg-[#4ade80]"
+                  />
                 </motion.div>
               </button>
 
