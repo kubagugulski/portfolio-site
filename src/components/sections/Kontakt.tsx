@@ -76,20 +76,20 @@ export default function Kontakt() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-[#2a2a2a] border border-[#4a4a4a] rounded-lg p-6 mb-8 flex flex-col md:flex-row gap-6 justify-center items-center"
+          className="bg-[#2a2a2a] border border-[#4a4a4a] rounded-lg p-6 mb-8 flex flex-col md:flex-row gap-6 justify-center items-start w-full"
         >
           {/* Email */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#4ade80]/10 border border-[#4ade80] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-[#4ade80]/10 border border-[#4ade80] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5 text-[#4ade80]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-xs text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>Email</p>
               <a 
                 href="mailto:kontakt@example.com" 
-                className="text-[#e5e5e5] hover:text-[#4ade80] transition-colors"
+                className="text-[#e5e5e5] hover:text-[#4ade80] transition-colors block truncate"
                 style={{ fontFamily: 'Space Mono, monospace' }}
               >
                 kontakt@example.com
@@ -99,16 +99,16 @@ export default function Kontakt() {
 
           {/* Phone */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#4ade80]/10 border border-[#4ade80] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-[#4ade80]/10 border border-[#4ade80] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5 text-[#4ade80]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-xs text-[#a1a1a1]" style={{ fontFamily: 'Space Mono, monospace' }}>Telefon</p>
               <a 
                 href="tel:+48123456789" 
-                className="text-[#e5e5e5] hover:text-[#4ade80] transition-colors"
+                className="text-[#e5e5e5] hover:text-[#4ade80] transition-colors block"
                 style={{ fontFamily: 'Space Mono, monospace' }}
               >
                 +48 123 456 789

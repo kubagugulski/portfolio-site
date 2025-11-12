@@ -39,7 +39,7 @@ export default function Oferta() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card 1 - Strona wizytówka */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -55,10 +55,10 @@ export default function Oferta() {
               Strona Wizytówka
             </h3>
 
-            <ul className="space-y-3 mb-8 flex-grow">
+            <ul className="space-y-3 mb-8 grow">
               {['Responsywny design', 'Optymalizacja SEO', 'Formularz kontaktowy', 'Panel WordPress', 'Hosting i domena w cenie'].map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-3 h-3 text-[#4ade80]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
@@ -97,26 +97,25 @@ export default function Oferta() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-[#1a1a1a] rounded-lg p-8 border border-[#4a4a4a] hover:border-[#4ade80] hover:shadow-[0_0_25px_rgba(74,222,128,0.2)] transition-all duration-300 flex flex-col"
           >
-            <div className="flex justify-between items-start mb-6">
-              <h3
-                className="text-2xl font-bold text-[#e5e5e5]"
-                style={{ fontFamily: 'Courier Prime, monospace' }}
-              >
-                Optymalizacja<br />Wizytówek Google
-              </h3>
-              <button
-                onClick={() => setShowPopup(true)}
-                className="text-xs text-[#4ade80] hover:text-[#22c55e] border-b border-[#4ade80] hover:border-[#22c55e] transition-colors whitespace-nowrap"
-                style={{ fontFamily: 'Space Mono, monospace' }}
-              >
-                Czym to jest?
-              </button>
-            </div>
+            <h3
+              className="text-2xl font-bold text-[#e5e5e5] mb-3"
+              style={{ fontFamily: 'Courier Prime, monospace' }}
+            >
+              Optymalizacja<br />Wizytówek Google
+            </h3>
+            
+            <button
+              onClick={() => setShowPopup(true)}
+              className="text-xs text-[#4ade80] hover:text-[#22c55e] border-b border-[#4ade80] hover:border-[#22c55e] transition-colors self-start mb-6"
+              style={{ fontFamily: 'Space Mono, monospace' }}
+            >
+              Czym to jest?
+            </button>
 
-            <ul className="space-y-3 mb-8 flex-grow">
+            <ul className="space-y-3 mb-8 grow">
               {['Optymalizacja profilu', 'Dodanie zdjęć i opisów', 'Zarządzanie opiniami', 'Raport miesięczny', 'Wsparcie techniczne'].map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-3 h-3 text-[#4ade80]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
@@ -166,10 +165,10 @@ export default function Oferta() {
               Masz inny pomysł? Podziel się nim ze mną!
             </p>
 
-            <ul className="space-y-3 mb-8 flex-grow">
+            <ul className="space-y-3 mb-8 grow">
               {['Sklepy internetowe', 'Landing pages', 'Integracje z API', 'Konsultacje techniczne', 'Audyt strony'].map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#4ade80]/20 border border-[#4ade80] flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-3 h-3 text-[#4ade80]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>

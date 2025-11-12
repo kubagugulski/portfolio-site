@@ -54,13 +54,13 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             whileHover={{ scale: 1.1, color: '#4ade80' }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-[#a1a1a1] hover:text-[#4ade80] transition-colors flex items-center gap-2"
             style={{ fontFamily: 'Space Mono, monospace' }}
           >
-            Back to top ↑
+            Powrót na górę ↑
           </motion.button>
         </div>
       </div>

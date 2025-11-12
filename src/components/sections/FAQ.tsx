@@ -78,7 +78,7 @@ export default function FAQ() {
                 <motion.div
                   animate={{ rotate: openIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#4ade80] flex items-center justify-center relative"
+                  className="shrink-0 w-8 h-8 rounded-full border-2 border-[#4ade80] flex items-center justify-center relative"
                 >
                   {/* Horizontal line */}
                   <motion.div 

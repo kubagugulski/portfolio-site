@@ -15,7 +15,7 @@ import CursorTrail from '@/components/CursorTrail';
 import CircleReveal from '@/components/CircleReveal';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); 
   const [showContent, setShowContent] = useState(false);
   const [circleComplete, setCircleComplete] = useState(false);
 
@@ -42,7 +42,7 @@ export default function Home() {
         >
           <Navbar />
           <ScrollIndicator />
-        
+          
           <main className="bg-[#1a1a1a] overflow-x-hidden">
             <Hero startAnimation={showContent} />
             <Oferta />
