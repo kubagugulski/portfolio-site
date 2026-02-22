@@ -11,9 +11,9 @@
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.24",
-    "next": "16.0.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "resend": "^6.4.1"
   },
   "devDependencies": {
