@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 const faqData = [
   {
-    question: "Pytanie placeholder 1?",
-    answer: "Tutaj będzie odpowiedź na pierwsze pytanie. Możesz wpisać dowolną treść, która będzie się rozwijać po kliknięciu."
+    question: "Ile wynosi czas realizacji?",
+    answer: "To zalezy do huja"
   },
   {
     question: "Pytanie placeholder 2?",
